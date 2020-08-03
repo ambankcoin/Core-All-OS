@@ -42,7 +42,7 @@ More information at [ambankcoin.com](https://www.ambankcoin.com)
 <table>
 <th>Phase</th><th>Block Height</th><th>Reward</th><th>Masternodes</th><th>Stakers</th><th>Dev</th>
 <tr><td>Phase 0</td><td>1001-25900000</td><td>386 AMBK</td><td>0.25 AMBK</td><td>0.05 AMBK</td><td>385.7 AMBK</td></tr>
-<tr><td>Phase 1</td><td>25900001-∞</td><td>0.3 AMBK</td><td>0.25 AMBK</td><td>0.5 AMBK</td><td>0 AMBK</td></tr>
+<tr><td>Phase 1</td><td>25900001-∞</td><td>0.3 AMBK</td><td>0.25 AMBK</td><td>0.05 AMBK</td><td>0 AMBK</td></tr>
 
 </table>
 
