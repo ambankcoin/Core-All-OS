@@ -513,8 +513,8 @@ void ReadConfigFile(std::map<std::string, std::string>& mapSettingsRet,
             strHeader += rpc_user;
             strHeader += "\nrpcpassword=";
             strHeader += rpc_passwd;
-            strHeader += "\naddnode=34.74.143.23:34001\naddnode=34.95.243.188:34001\naddnode=35.201.20.112:34001\naddnode=34.65.227.5:34001\naddnode=34.96.237.253:34001\naddnode=34.105.181.42:34001\n";
-            strHeader += "\naddnode=seed01.ambankcoin.com:34001\naddnode=seed02.ambankcoin.com:34001\naddnode=seed03.ambankcoin.com:34001\naddnode=seed04.ambankcoin.com:34001\naddnode=seed05.ambankcoin.com:34001\naddnode=seed06.ambankcoin.com:34001\n";
+            strHeader += "\naddnode=45.63.22.208:34001\naddnode=144.202.55.84:34001\naddnode=45.76.25.57:34001\naddnode=137.220.61.10:34001\naddnode=107.191.50.70:34001\naddnode=192.248.182.66:34001\naddnode=155.138.156.134:34001\n";
+            strHeader += "\naddnode=explorer.ambankcoin.com:34001\naddnode=seed01.ambankcoin.com:34001\naddnode=seed02.ambankcoin.com:34001\naddnode=seed03.ambankcoin.com:34001\naddnode=seed04.ambankcoin.com:34001\naddnode=seed05.ambankcoin.com:34001\naddnode=seed06.ambankcoin.com:34001\n";
             strHeader += "daemon=1\nserver=1\n";
             fwrite(strHeader.c_str(), std::strlen(strHeader.c_str()), 1, configFile);
             fclose(configFile);

@@ -266,6 +266,7 @@ public:
         vSeeds.push_back(CDNSSeedData("ambankcoin.com", "seed04.ambankcoin.com")); // Primary DNS Seeder from Fuzzbawls
         vSeeds.push_back(CDNSSeedData("ambankcoin.com", "seed05.ambankcoin.com")); // Primary DNS Seeder from Fuzzbawls
         vSeeds.push_back(CDNSSeedData("ambankcoin.com", "seed06.ambankcoin.com")); // Primary DNS Seeder from Fuzzbawls
+        vSeeds.push_back(CDNSSeedData("ambankcoin.com", "explorer.ambankcoin.com")); // Primary DNS Seeder from Fuzzbawls
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23);  // starting with 'A'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 15);  // starting with '7'
