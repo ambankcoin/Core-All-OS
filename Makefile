@@ -240,8 +240,7 @@ am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/test/util/bitcoin-util-test.py \
 	$(top_srcdir)/test/util/rpcauth-test.py COPYING INSTALL \
 	build-aux/compile build-aux/config.guess build-aux/config.sub \
-	build-aux/depcomp build-aux/install-sh build-aux/ltmain.sh \
-	build-aux/missing
+	build-aux/install-sh build-aux/ltmain.sh build-aux/missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -431,7 +430,7 @@ PROTOC = /usr/bin/protoc
 PTHREAD_CC = gcc
 PTHREAD_CFLAGS = -pthread
 PTHREAD_LIBS = 
-PYTHON = /usr/bin/python3.6
+PYTHON = /usr/bin/python3.8
 PYTHONPATH = 
 QR_CFLAGS = 
 QR_LIBS = -lqrencode

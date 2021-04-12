@@ -343,6 +343,7 @@ public:
         nToCheckBlockUpgradeMajority = 5760; // 4 days
         nMinerThreads = 0;
         nLastPOWBlock = 200;
+        strDevpubkey = "039db1b2cf30e49ca29722faafc50f49c6686bb9fa8c56e22e727cbaeaaea8bea7";
         nAmbankCoinBadBlockTime = 1489001494;  // Skip nBit validation of Block 259201 per PR #915
         nAmbankCoinBadBlocknBits = 0x1e0a20bd; // Skip nBit validation of Block 201 per PR #915
         nMaturity = 15;
@@ -350,8 +351,8 @@ public:
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017 04:00:00 GMT
         nMaxMoneyOut = 100000000 * COIN;
-        nZerocoinStartHeight = 201576;
-        nZerocoinStartTime = 1501776000;
+        nZerocoinStartHeight = 15000000;
+        nZerocoinStartTime = 1667216798;
         nBlockEnforceSerialRange = 1;            //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 9908000; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 9891737;         //First block that bad serials emerged
@@ -465,9 +466,9 @@ public:
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 0; //approx Mon, 17 Apr 2017 04:00:00 GMT
         nMaxMoneyOut = 43199500 * COIN;
-        nZerocoinStartHeight = 300;
+        nZerocoinStartHeight = 1500000;
         nBlockZerocoinV2 = 300;
-        nZerocoinStartTime = 1501776000;
+        nZerocoinStartTime = 1667216798;
         nBlockEnforceSerialRange = 1;              //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 999999999; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 999999999;         //First block that bad serials emerged

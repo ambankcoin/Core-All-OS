@@ -227,6 +227,7 @@ bool CBlockTreeDB::LoadBlockIndexGuts()
             ssKey >> chType;
             if (chType == 'b') {
                 leveldb::Slice slValue = pcursor->value();
+
                 CDataStream ssValue(slValue.data(), slValue.data() + slValue.size(), SER_DISK, CLIENT_VERSION);
                 CDiskBlockIndex diskindex;
                 ssValue >> diskindex;

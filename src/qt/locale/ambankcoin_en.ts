@@ -5352,7 +5352,7 @@ Verify that you have installed a predetermined text editor.</source>
                            balance to zAMBK to assist the network. If you do not wish to
                            stake zAMBK or take advantage of the privacy benefit it brings,
                            you can disable the automatic minting in your AMBANKCOIN wallet by
-                           going to Settings-&gt;Options and deselecting ???Enable zAMBK Automint???.
+                           going to Settings-&gt;Options and deselecting “Enable zAMBK Automint”.
                            If you are not making use of the AMBANKCOIN-QT or GUI you can simply open
                            your ambankcoin.conf file and add &lt;i&gt;enablezeromint=0&lt;/i&gt; Without the quotation
                            marks and restart your wallet to disable automint.&lt;/p&gt;
@@ -5382,7 +5382,7 @@ Verify that you have installed a predetermined text editor.</source>
                            zAMBK can be spent and sent to any AMBANKCOIN address. The receiver will
                            receive standard AMBANKCOIN but the origin of the AMBANKCOIN is anonymized by the zAMBK Protocol.
                            &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;
-                           If you want more zAMBK you will need to mint your balance in the ???Privacy??? tab.
+                           If you want more zAMBK you will need to mint your balance in the “Privacy” tab.
                            &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;
                          </source>
         <translation type="unfinished"></translation>
@@ -7572,7 +7572,7 @@ AMBANKCOIN Core Wallet</source>
     </message>
     <message>
         <location line="+27"/>
-        <source>AMBANKCOIN is the world???s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
+        <source>AMBANKCOIN is the world’s most innovative Proof of Stake blockchain based technology. Developed by a team of highly experienced developers and cryptographers.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
