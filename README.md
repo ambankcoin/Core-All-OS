@@ -1,55 +1,48 @@
 AMBANKCOIN Core integration/staging repository
 =====================================
 
-[![master Actions Status](https://github.com/ambankcoin/Core-All-OS/workflows/CI%20Actions%20for%20AMBANKCOIN/badge.svg)](https://github.com/ambankcoin/Core-All-OS/actions)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/AMBANKCOIN-Project/ambankcoin?color=%235c4b7d&cacheSeconds=3600)](https://github.com/ambankcoin/Core-All-OS/releases)
-[![GitHub Release Date](https://img.shields.io/github/release-date/AMBANKCOIN-Project/ambankcoin?color=%235c4b7d&cacheSeconds=3600)](https://github.com/ambankcoin/Core-All-OS/releases)
+[![Build Status](https://travis-ci.org/AMBANKCOIN/AMBANKCOIN.svg?branch=master)](https://travis-ci.org/AMBANKCOIN/AMBANKCOIN) [![GitHub version](https://badge.fury.io/gh/AMBANKCOIN%2FAMBANKCOIN.svg)](https://badge.fury.io/gh/AMBANKCOIN-Project%2FAMBANKCOIN)
 
-## What is AMBANKCOIN?
+AMBANKCOIN is an open source crypto-currency focused on fast private transactions using the Zerocoin protocol, with low transaction fees & environmental footprint.  It utilizes the first ever anonymous proof of stake protocol, called zPoS, combined with regular PoS and masternodes for securing its network. zPoS incentivises using the privacy features available in AMBANKCOIN by granting a higher block reward for zPoS over regular PoS and masternodes. In practice AMBANKCOIN has between 4 to 10 times higher use of it's privacy features in comparison to other coins that combine public and private transactions. This is thanks to innovations like zPoS and integrating the Zerocoin protocol into light/mobile wallets, allowing for a complete and lightweight privacy protocol that can be used on the go. As well as security improvements like deterministic generation of zAMBK for easy backups.
+The goal of AMBANKCOIN is to achieve a decentralized sustainable crypto currency with near instant full-time private transactions, fair governance and community intelligence.
+- Anonymized transactions & consensus using the Zerocoin Protocol and zPoS.
+- light/mobile wallet privacy using the Zerocoin Light Node Protocol
+- Fast transactions featuring guaranteed zero confirmation transactions, we call it _SwiftX_.
+- Decentralized blockchain voting utilizing Masternode technology to form a DAO. The blockchain will distribute monthly treasury funds based on successful proposals submitted by the community and voted on by the DAO.
 
-AMBANKCOIN is an open source community-driven cryptocurrency, focused on five main aspects:
+More information at [ambankcoin.com](https://www.ambankcoin.com)
 
-(1) User Data Protection: Through the use of SHIELD, a zk-SNARKs based privacy protocol.
+### Coin Specs
+<table>
+<tr><td>Algo</td><td>Quark</td></tr>
+<tr><td>Block Time</td><td>60 Seconds</td></tr>
+<tr><td>Difficulty Retargeting</td><td>Every Block</td></tr>
+<tr><td>Max Coin Supply (PoW Phase)</td><td>100,385,614 AMBK</td></tr>
+<tr><td>Max Coin Supply (PoS Phase)</td><td>10,000,000,000 AMBK</td></tr>
+<tr><td>Premine</td><td>100,000,000 AMBK</td></tr>
+</table>
 
-(2) Low environmental footprint and network participation equality: Through the use of a highly developed Proof of Stake protocol.
+### Reward Distribution
 
-(3) Decentralized Governance System: A DAO built on top of the tier two Masternodes network, enabling a monthly community treasury, proposals submission and decentralized voting.
+<table>
+<th colspan=4>Genesis Block</th>
+<tr><th>Block Height</th><th>Reward Amount</th><th>Notes</th></tr>
+<tr><td>1</td><td>100,000,000 AMBK</td><td>Initial Pre-mine</td></tr>
+</table>
 
-(4) Fast Transactions: Through the use of fast block times and the tier two network, AMBANKCOIN is committed to continue researching new and better instant transactions mechanisms.
+### PoW Rewards Breakdown
 
-(5) Ease of Use: AMBANKCOIN is determined to offer the best possible graphical interface for a core node/wallet. A full featured graphical product for new and advanced users.
+<table>
+<th>Block Height</th><th>Masternodes</th><th>Miner</th><th>Dev</th>
+<tr><td>2-1000</td><td>0.25 AMBK</td><td>0.05 AMBK</td><td>385.7 AMBK</td></tr>
+</table>
 
-A lot more information and specs at [ambankcoin.com](https://www.ambankcoin.com/). Join the community at [AMBANKCOIN Discord](https://discordapp.com/invite/jzqVsJd).
+### PoS Rewards Breakdown
 
-## License
-AMBANKCOIN Core is released under the terms of the MIT license. See [COPYING](https://github.com/ambankcoin/Core-All-OS/blob/master/COPYING) for more information or see https://opensource.org/licenses/MIT.
+<table>
+<th>Phase</th><th>Block Height</th><th>Reward</th><th>Masternodes</th><th>Stakers</th><th>Dev</th>
+<tr><td>Phase 0</td><td>1001-25900000</td><td>386 AMBK</td><td>0.25 AMBK</td><td>0.05 AMBK</td><td>385.7 AMBK</td></tr>
+<tr><td>Phase 1</td><td>25900001-∞</td><td>0.3 AMBK</td><td>0.25 AMBK</td><td>0.05 AMBK</td><td>0 AMBK</td></tr>
 
-## Development Process
+</table>
 
-The master branch is regularly built (see doc/build-*.md for instructions) and tested, but it is not guaranteed to be completely stable. [Tags](https://github.com/ambankcoin/Core-All-OS/tags) are created regularly from release branches to indicate new official, stable release versions of AMBANKCOIN Core.
-
-The contribution workflow is described in [CONTRIBUTING.md](https://github.com/ambankcoin/Core-All-OS/blob/master/CONTRIBUTING.md) and useful hints for developers can be found in [doc/developer-notes.md](https://github.com/ambankcoin/Core-All-OS/blob/master/doc/developer-notes.md).
-
-## Testing
-
-Testing and code review is the bottleneck for development; we get more pull requests than we can review and test on short notice. Please be patient and help out by testing other people's pull requests, and remember this is a security-critical project where any mistake might cost people a lot of money.
-
-## Automated Testing
-
-Developers are strongly encouraged to write [unit tests](https://github.com/ambankcoin/Core-All-OS/blob/master/src/test/README.md) for new code, and to submit new unit tests for old code. Unit tests can be compiled and run (assuming they weren't disabled in configure) with: make check. Further details on running and extending unit tests can be found in [/src/test/README.md](https://github.com/ambankcoin/Core-All-OS/blob/master/src/test/README.md).
-
-There are also regression and integration tests, written in Python. These tests can be run (if the test dependencies are installed) with: test/functional/test_runner.py`
-
-The CI (Continuous Integration) systems make sure that every pull request is built for Windows, Linux, and macOS, and that unit/sanity tests are run automatically.
-
-## Manual Quality Assurance (QA) Testing
-
-Changes should be tested by somebody other than the developer who wrote the code. This is especially important for large or high-risk changes. It is useful to add a test plan to the pull request description if testing the changes is not straightforward.
-
-## Translations
-
-Changes to translations as well as new translations can be submitted to AMBANKCOIN Core's Transifex page.
-
-Translations are periodically pulled from Transifex and merged into the git repository. See the [translation process](https://github.com/ambankcoin/Core-All-OS/blob/master/doc/translation_process.md) for details on how this works.
-
-Important: We do not accept translation changes as GitHub pull requests because the next pull from Transifex would automatically overwrite them again.
