@@ -220,7 +220,7 @@ am__define_uniq_tagged_files = \
 ETAGS = etags
 CTAGS = ctags
 CSCOPE = cscope
-DIST_SUBDIRS = src doc/man
+DIST_SUBDIRS = src doc/man params
 am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(srcdir)/libbitcoinconsensus.pc.in \
 	$(top_srcdir)/build-aux/compile \
@@ -240,7 +240,8 @@ am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/test/util/bitcoin-util-test.py \
 	$(top_srcdir)/test/util/rpcauth-test.py COPYING INSTALL \
 	build-aux/compile build-aux/config.guess build-aux/config.sub \
-	build-aux/install-sh build-aux/ltmain.sh build-aux/missing
+	build-aux/depcomp build-aux/install-sh build-aux/ltmain.sh \
+	build-aux/missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -283,14 +284,15 @@ distuninstallcheck_listfiles = find . -type f -print
 am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
   | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} /home/ksk/Works/2020/2020-07/2020-07-23_AmbankCoin/Ubuntu_works/AmbankCoin-1.0.0/build-aux/missing aclocal-1.16
+ACLOCAL = ${SHELL} /home/ksk/Works/2020/2020-07/2020-07-23_AmbankCoin/Ubuntu_works/AmbankCoin-2.0.0/build-aux/missing aclocal-1.16
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
 AR = /usr/bin/ar
 ARFLAGS = cr
-AUTOCONF = ${SHELL} /home/ksk/Works/2020/2020-07/2020-07-23_AmbankCoin/Ubuntu_works/AmbankCoin-1.0.0/build-aux/missing autoconf
-AUTOHEADER = ${SHELL} /home/ksk/Works/2020/2020-07/2020-07-23_AmbankCoin/Ubuntu_works/AmbankCoin-1.0.0/build-aux/missing autoheader
-AUTOMAKE = ${SHELL} /home/ksk/Works/2020/2020-07/2020-07-23_AmbankCoin/Ubuntu_works/AmbankCoin-1.0.0/build-aux/missing automake-1.16
+ARM_CRC_CXXFLAGS = 
+AUTOCONF = ${SHELL} /home/ksk/Works/2020/2020-07/2020-07-23_AmbankCoin/Ubuntu_works/AmbankCoin-2.0.0/build-aux/missing autoconf
+AUTOHEADER = ${SHELL} /home/ksk/Works/2020/2020-07/2020-07-23_AmbankCoin/Ubuntu_works/AmbankCoin-2.0.0/build-aux/missing autoheader
+AUTOMAKE = ${SHELL} /home/ksk/Works/2020/2020-07/2020-07-23_AmbankCoin/Ubuntu_works/AmbankCoin-2.0.0/build-aux/missing automake-1.16
 AVX2_CXXFLAGS = -mavx -mavx2
 AWK = mawk
 BDB_CFLAGS = 
@@ -310,19 +312,20 @@ BOOST_SYSTEM_LIB = -lboost_system
 BOOST_THREAD_LIB = -lboost_thread
 BOOST_UNIT_TEST_FRAMEWORK_LIB = -lboost_unit_test_framework
 BREW = 
+CARGO = /usr/bin/cargo
 CC = gcc
 CCACHE = 
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2
 CHARTS_CFLAGS = -DQT_CHARTS_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I/usr/include/x86_64-linux-gnu/qt5/QtCharts -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
 CHARTS_LIBS = -lQt5Charts -lQt5Widgets -lQt5Gui -lQt5Core
-CLIENT_VERSION_BUILD = 3
-CLIENT_VERSION_IS_RELEASE = true
-CLIENT_VERSION_MAJOR = 1
+CLIENT_VERSION_BUILD = 0
+CLIENT_VERSION_IS_RELEASE = false
+CLIENT_VERSION_MAJOR = 2
 CLIENT_VERSION_MINOR = 0
 CLIENT_VERSION_REVISION = 0
 COMPAT_LDFLAGS = 
-COPYRIGHT_YEAR = 2020
+COPYRIGHT_YEAR = 2021
 CPP = gcc -E
 CPPFILT = /usr/bin/c++filt
 CPPFLAGS =  -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS
@@ -331,7 +334,7 @@ CRYPTO_LIBS = -lcrypto
 CXX = g++ -std=c++11
 CXXCPP = g++ -std=c++11 -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -g -O2
+CXXFLAGS = -g -O2 -fno-strict-aliasing -Wno-builtin-declaration-mismatch
 CYGPATH_W = echo
 DEBUG_CPPFLAGS = 
 DEBUG_CXXFLAGS = 
@@ -363,7 +366,14 @@ GREP = /bin/grep
 HARDENED_CPPFLAGS =  -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2
 HARDENED_CXXFLAGS =  -Wstack-protector -fstack-protector-all
 HARDENED_LDFLAGS =  -Wl,-z,relro -Wl,-z,now -pie
+HAVE_BUILTIN_PREFETCH = 1
 HAVE_CXX11 = 1
+HAVE_FDATASYNC = 1
+HAVE_FULLFSYNC = 0
+HAVE_MM_PREFETCH = 1
+HAVE_O_CLOEXEC = 1
+HAVE_STRONG_GETAUXVAL = 0
+HAVE_WEAK_GETAUXVAL = 1
 HEXDUMP = /usr/bin/hexdump
 IMAGEMAGICK_CONVERT = 
 INSTALL = /usr/bin/install -c
@@ -377,13 +387,14 @@ LCOV_OPTS =
 LD = /usr/bin/ld -m elf_x86_64
 LDFLAGS = 
 LEVELDB_CPPFLAGS = 
-LEVELDB_TARGET_FLAGS = -DOS_LINUX
 LIBLEVELDB = 
 LIBMEMENV = 
 LIBOBJS = 
 LIBS =  -lgmp
+LIBSAPLING_LIBS = -lgmp -lboost_system-mt -lcrypto -lsodium
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBTOOL_APP_LDFLAGS = 
+LIBZCASH_LIBS = -lboost_system -lcrypto -lsodium  -ldl
 LIPO = 
 LN_S = ln -s
 LRELEASE = /usr/lib/x86_64-linux-gnu/qt5/bin/lrelease
@@ -391,7 +402,7 @@ LTLIBOBJS =
 LT_SYS_LIBRARY_PATH = 
 LUPDATE = /usr/lib/x86_64-linux-gnu/qt5/bin/lupdate
 MAINT = 
-MAKEINFO = ${SHELL} /home/ksk/Works/2020/2020-07/2020-07-23_AmbankCoin/Ubuntu_works/AmbankCoin-1.0.0/build-aux/missing makeinfo
+MAKEINFO = ${SHELL} /home/ksk/Works/2020/2020-07/2020-07-23_AmbankCoin/Ubuntu_works/AmbankCoin-2.0.0/build-aux/missing makeinfo
 MAKENSIS = 
 MANIFEST_TOOL = :
 MINIUPNPC_CPPFLAGS = 
@@ -413,10 +424,10 @@ OTOOL64 =
 PACKAGE = ambankcoin
 PACKAGE_BUGREPORT = https://github.com/ambankcoin-project/ambankcoin/issues
 PACKAGE_NAME = AMBANKCOIN Core
-PACKAGE_STRING = AMBANKCOIN Core 1.0.0.3
+PACKAGE_STRING = AMBANKCOIN Core 2.0.0
 PACKAGE_TARNAME = ambankcoin
 PACKAGE_URL = https://ambankcoin.com/
-PACKAGE_VERSION = 1.0.0.3
+PACKAGE_VERSION = 2.0.0
 PATH_SEPARATOR = :
 PIC_FLAGS = -fPIC
 PIE_FLAGS = -fPIE
@@ -480,12 +491,17 @@ RCC = /usr/lib/x86_64-linux-gnu/qt5/bin/rcc
 READELF = /usr/bin/readelf
 RELDFLAGS = 
 RSVG_CONVERT = 
+RUSTC = /usr/bin/rustc
+RUST_TARGET = 
+RUST_VENDORED_SOURCES = 
 SANITIZER_CXXFLAGS = 
 SANITIZER_LDFLAGS = 
 SED = /bin/sed
 SET_MAKE = 
 SHANI_CXXFLAGS = -msse4 -msha
 SHELL = /bin/bash
+SODIUM_CFLAGS = 
+SODIUM_LIBS = -lsodium
 SSE41_CXXFLAGS = -msse4.1
 SSE42_CXXFLAGS = -msse4.2
 SSL_CFLAGS = 
@@ -500,7 +516,7 @@ USE_NUM_GMP =
 USE_NUM_OPENSSL = 
 USE_QTCHARTS = 
 USE_UPNP = 
-VERSION = 1.0.0.3
+VERSION = 2.0.0
 WARN_CXXFLAGS =  -Wall -Wextra -Wformat -Wvla -Wformat-security -Wredundant-decls
 WINDOWS_BITS = 
 WINDRES = 
@@ -509,10 +525,10 @@ X11XCB_LIBS =
 XGETTEXT = /usr/bin/xgettext
 ZMQ_CFLAGS = 
 ZMQ_LIBS = 
-abs_builddir = /home/ksk/Works/2020/2020-07/2020-07-23_AmbankCoin/Ubuntu_works/AmbankCoin-1.0.0
-abs_srcdir = /home/ksk/Works/2020/2020-07/2020-07-23_AmbankCoin/Ubuntu_works/AmbankCoin-1.0.0
-abs_top_builddir = /home/ksk/Works/2020/2020-07/2020-07-23_AmbankCoin/Ubuntu_works/AmbankCoin-1.0.0
-abs_top_srcdir = /home/ksk/Works/2020/2020-07/2020-07-23_AmbankCoin/Ubuntu_works/AmbankCoin-1.0.0
+abs_builddir = /home/ksk/Works/2020/2020-07/2020-07-23_AmbankCoin/Ubuntu_works/AmbankCoin-2.0.0
+abs_srcdir = /home/ksk/Works/2020/2020-07/2020-07-23_AmbankCoin/Ubuntu_works/AmbankCoin-2.0.0
+abs_top_builddir = /home/ksk/Works/2020/2020-07/2020-07-23_AmbankCoin/Ubuntu_works/AmbankCoin-2.0.0
+abs_top_srcdir = /home/ksk/Works/2020/2020-07/2020-07-23_AmbankCoin/Ubuntu_works/AmbankCoin-2.0.0
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_CXX = g++
@@ -544,7 +560,7 @@ host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/ksk/Works/2020/2020-07/2020-07-23_AmbankCoin/Ubuntu_works/AmbankCoin-1.0.0/build-aux/install-sh
+install_sh = ${SHELL} /home/ksk/Works/2020/2020-07/2020-07-23_AmbankCoin/Ubuntu_works/AmbankCoin-2.0.0/build-aux/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -567,7 +583,7 @@ top_build_prefix =
 top_builddir = .
 top_srcdir = .
 ACLOCAL_AMFLAGS = -I build-aux/m4
-SUBDIRS = src $(am__append_1)
+SUBDIRS = src $(am__append_1) params
 #pkgconfigdir = $(libdir)/pkgconfig
 #pkgconfig_DATA = libbitcoinconsensus.pc
 BITCOIND_BIN = $(top_builddir)/src/$(BITCOIN_DAEMON_NAME)$(EXEEXT)
@@ -599,6 +615,13 @@ DIST_SHARE = \
            $(top_srcdir)/share/genbuild.sh \
            $(top_srcdir)/share/rpcauth
 
+DIST_CARGO = \
+           $(top_srcdir)/.cargo/config.offline \
+           $(top_srcdir)/Cargo.lock \
+           $(top_srcdir)/Cargo.toml \
+           $(top_srcdir)/rust-toolchain \
+           $(top_srcdir)/params/install-params.sh
+
 BIN_CHECKS = $(top_srcdir)/contrib/devtools/symbol-check.py \
            $(top_srcdir)/contrib/devtools/security-check.py
 
@@ -617,6 +640,8 @@ OSX_PACKAGING = $(OSX_DEPLOY_SCRIPT) $(OSX_FANCY_PLIST) $(OSX_INSTALLER_ICONS) \
   $(top_srcdir)/contrib/macdeploy/detached-sig-apply.sh \
   $(top_srcdir)/contrib/macdeploy/detached-sig-create.sh
 
+SPEND_PARAMS = $(top_srcdir)/params/sapling-spend.params
+OUTPUT_PARAMS = $(top_srcdir)/params/sapling-output.params
 COVERAGE_INFO = baseline.info \
   test_ambankcoin_filtered.info total_coverage.info \
   baseline_filtered.info functional_test.info functional_test_filtered.info \
@@ -624,14 +649,15 @@ COVERAGE_INFO = baseline.info \
 
 OSX_APP_BUILT = $(OSX_APP)/Contents/PkgInfo $(OSX_APP)/Contents/Resources/empty.lproj \
   $(OSX_APP)/Contents/Resources/bitcoin.icns $(OSX_APP)/Contents/Info.plist \
-  $(OSX_APP)/Contents/MacOS/AMBANKCOIN-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings
+  $(OSX_APP)/Contents/MacOS/AMBANKCOIN-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings \
+  $(OSX_APP)/Contents/Resources/sapling-spend.params $(OSX_APP)/Contents/Resources/sapling-output.params
 
 APP_DIST_DIR = $(top_builddir)/dist
 APP_DIST_EXTRAS = $(APP_DIST_DIR)/.background/$(OSX_BACKGROUND_IMAGE) $(APP_DIST_DIR)/.DS_Store $(APP_DIST_DIR)/Applications
 OSX_BACKGROUND_IMAGE_DPIFILES := $(foreach dpi,$(OSX_BACKGROUND_IMAGE_DPIS),dpi$(dpi).$(OSX_BACKGROUND_IMAGE))
-#LCOV_FILTER_PATTERN = -p "/usr/include/" -p "/usr/lib/" -p "src/leveldb/" -p "src/univalue" -p "src/secp256k1"
+#LCOV_FILTER_PATTERN = -p "/usr/include/" -p "/usr/lib/" -p "src/leveldb/" -p "src/crc32c/" -p "src/univalue" -p "src/secp256k1"
 dist_noinst_SCRIPTS = autogen.sh
-EXTRA_DIST = $(DIST_SHARE) $(DIST_CONTRIB) $(DIST_DOCS) \
+EXTRA_DIST = $(DIST_SHARE) $(DIST_CONTRIB) $(DIST_DOCS) $(DIST_CARGO) \
 	$(WINDOWS_PACKAGING) $(LINUX_PACKAGING) $(OSX_PACKAGING) \
 	$(BIN_CHECKS) test/functional test/util/bitcoin-util-test.py \
 	test/util/data/bitcoin-util-test.json \
@@ -648,7 +674,8 @@ EXTRA_DIST = $(DIST_SHARE) $(DIST_CONTRIB) $(DIST_DOCS) \
 	test/util/data/txcreatescript1.hex \
 	test/util/data/txcreatescript1.json \
 	test/util/data/txcreatesign.hex \
-	test/util/data/txcreatesign.json test/util/rpcauth-test.py
+	test/util/data/txcreatesign.json \
+	test/util/data/pre_hd_wallet.dat test/util/rpcauth-test.py
 CLEANFILES = $(OSX_DMG) $(BITCOIN_WIN_INSTALLER)
 DISTCHECK_CONFIGURE_FLAGS = --enable-man
 all: all-recursive
@@ -1215,6 +1242,14 @@ $(OSX_APP)/Contents/MacOS/AMBANKCOIN-Qt: all-recursive
 $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings:
 	$(MKDIR_P) $(@D)
 	echo '{	CFBundleDisplayName = "$(PACKAGE_NAME)"; CFBundleName = "$(PACKAGE_NAME)"; }' > $@
+
+$(OSX_APP)/Contents/Resources/sapling-spend.params: $(SPEND_PARAMS)
+	$(MKDIR_P) $(@D)
+	$(INSTALL_DATA) $< $@
+
+$(OSX_APP)/Contents/Resources/sapling-output.params: $(OUTPUT_PARAMS)
+	$(MKDIR_P) $(@D)
+	$(INSTALL_DATA) $< $@
 
 osx_volname:
 	echo $(OSX_VOLNAME) >$@

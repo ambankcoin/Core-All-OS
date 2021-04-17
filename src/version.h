@@ -1,6 +1,6 @@
 // Copyright (c) 2012-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2019 The AMBANKCOIN developers
+// Copyright (c) 2015-2020 The AMBANKCOIN developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -22,6 +22,9 @@ static const int GETHEADERS_VERSION = 25001;
 //! disconnect from peers older than this proto version
 static const int MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT = 30000;
 static const int MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT = 30001;
+
+//! peers with version older than this, could relay invalid (stale) mn pings
+static const int MIN_PEER_CACHEDVERSION = 30001;
 
 //! masternodes older than this proto version use old strMessage format for mnannounce
 static const int MIN_PEER_MNANNOUNCE = 26001;

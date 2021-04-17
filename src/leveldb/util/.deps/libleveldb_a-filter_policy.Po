@@ -124,7 +124,8 @@ leveldb/util/libleveldb_a-filter_policy.o: leveldb/util/filter_policy.cc \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/9/bits/functional_hash.h \
- /usr/include/c++/9/bits/basic_string.tcc
+ /usr/include/c++/9/bits/basic_string.tcc \
+ leveldb/include/leveldb/export.h
 
 /usr/include/stdc-predef.h:
 
@@ -431,3 +432,5 @@ leveldb/include/leveldb/filter_policy.h:
 /usr/include/c++/9/bits/functional_hash.h:
 
 /usr/include/c++/9/bits/basic_string.tcc:
+
+leveldb/include/leveldb/export.h:

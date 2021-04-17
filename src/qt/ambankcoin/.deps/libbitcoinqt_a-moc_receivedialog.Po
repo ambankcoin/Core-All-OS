@@ -1,6 +1,6 @@
 qt/ambankcoin/libbitcoinqt_a-moc_receivedialog.o: \
  qt/ambankcoin/moc_receivedialog.cpp /usr/include/stdc-predef.h \
- qt/ambankcoin/receivedialog.h \
+ qt/ambankcoin/receivedialog.h qt/ambankcoin/focuseddialog.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QDialog \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdialog.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h \
@@ -269,6 +269,8 @@ qt/ambankcoin/libbitcoinqt_a-moc_receivedialog.o: \
 /usr/include/stdc-predef.h:
 
 qt/ambankcoin/receivedialog.h:
+
+qt/ambankcoin/focuseddialog.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QDialog:
 

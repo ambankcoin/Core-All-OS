@@ -11,6 +11,7 @@ src/ambankcoin
 src/ambankcoind
 src/ambankcoin-cli
 src/ambankcoin-tx
+src/bench/bench_ambankcoin
 src/test/test_ambankcoin
 src/qt/test/test_ambankcoin-qt
 
@@ -88,6 +89,11 @@ ambankcoin-qt
 AMBANKCOIN-Qt.app
 background.tiff*
 
+# Rust
+.cargo/.configured-for-*
+.cargo/config
+target/
+
 # Unit-tests
 Makefile.test
 ambankcoin-qt_test
@@ -139,3 +145,4 @@ ui_*
 build*
 ambankcoind.*
 ambankcoind-new-gui.*
+/cov-int/

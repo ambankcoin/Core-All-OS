@@ -1,0 +1,15 @@
+QT_TS = \
+  qt/locale/ambankcoin_de.ts \
+  qt/locale/ambankcoin_en.ts \
+  qt/locale/ambankcoin_en_US.ts \
+  qt/locale/ambankcoin_es.ts \
+  qt/locale/ambankcoin_es_ES.ts \
+  qt/locale/ambankcoin_fr_FR.ts \
+  qt/locale/ambankcoin_hr_HR.ts \
+  qt/locale/ambankcoin_it.ts \
+  qt/locale/ambankcoin_ko_KR.ts \
+  qt/locale/ambankcoin_nl.ts \
+  qt/locale/ambankcoin_pl.ts \
+  qt/locale/ambankcoin_ru.ts \
+  qt/locale/ambankcoin_tr.ts \
+  qt/locale/ambankcoin_zh_CN.ts

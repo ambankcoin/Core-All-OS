@@ -45,8 +45,8 @@ const std::string CLIENT_NAME("AMBANKCOIN Core");
 //! git will put "#define GIT_ARCHIVE 1" on the next line inside archives. 
 #define GIT_ARCHIVE 1
 #ifdef GIT_ARCHIVE
-#define GIT_COMMIT_ID "b005d840a8e694a9e0726131a580fc72dcab2b53"
-#define GIT_COMMIT_DATE "Sun, 15 Dec 2019 03:51:34 -0800"
+#define GIT_COMMIT_ID "4c564dd875ddea67e64896a493536abfd30a1f22"
+#define GIT_COMMIT_DATE "Wed, 24 Mar 2021 18:59:42 +0100"
 #endif
 
 #define BUILD_DESC_WITH_SUFFIX(maj, min, rev, build, suffix) \

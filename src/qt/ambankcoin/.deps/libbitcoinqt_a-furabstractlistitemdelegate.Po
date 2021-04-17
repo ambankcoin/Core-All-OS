@@ -285,16 +285,16 @@ qt/ambankcoin/libbitcoinqt_a-furabstractlistitemdelegate.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qrubberband.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QModelIndex \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QPaintEngine \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintengine.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpainter.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextoption.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpen.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QModelIndex \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QPaintEngine \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintengine.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpainter.h
 
 /usr/include/stdc-predef.h:
@@ -975,7 +975,17 @@ qt/ambankcoin/furlistrow.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h:
 
-/usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QModelIndex:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QObject:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/QPaintEngine:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintengine.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qpainter.h:
 
@@ -983,16 +993,6 @@ qt/ambankcoin/furlistrow.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qpen.h:
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/QObject:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/QModelIndex:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtGui/QPaintEngine:
-
-/usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintengine.h:
+/usr/include/x86_64-linux-gnu/qt5/QtGui/QPainter:
 
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qpainter.h:

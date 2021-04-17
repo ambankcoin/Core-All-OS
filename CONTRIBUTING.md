@@ -221,7 +221,7 @@ In general, all pull requests must:
   - follow code style guidelines;
 
 Patches that change AMBANKCOIN consensus rules are considerably more involved than
-normal because they affect the entire ambksystem and so must be preceded by
+normal because they affect the entire ecosystem and so must be preceded by
 extensive discussions and clear detailing. While each case will be different,
 one should be prepared to expend more time and effort than for other kinds of
 patches because of increased peer review and consensus building requirements.

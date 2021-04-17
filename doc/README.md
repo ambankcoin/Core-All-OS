@@ -16,6 +16,8 @@ Unpack the files into a directory and run:
 - `bin/ambankcoin-qt` (GUI) or
 - `bin/ambankcoind` (headless)
 
+If this is the first time running AMBANKCOIN Core (since v5.0.0), you'll need to install the sapling params by running the included `install-params.sh` script, which copies the two params files to `$HOME/.ambankcoin-params`
+
 ### Windows
 
 Unpack the files into a directory, and then run ambankcoin-qt.exe.
@@ -62,6 +64,7 @@ The AMBANKCOIN repo's [root README](/README.md) contains relevant information on
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)
 - [Files](files.md)
+- [Reduce Memory](reduce-memory.md)
 - [Tor Support](tor.md)
 - [Init Scripts (systemd/upstart/openrc)](init.md)
 

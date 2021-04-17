@@ -9,13 +9,13 @@
 /* #undef AC_APPLE_UNIVERSAL_BUILD */
 
 /* Version Build */
-#define CLIENT_VERSION_BUILD 3
+#define CLIENT_VERSION_BUILD 0
 
 /* Version is release */
-#define CLIENT_VERSION_IS_RELEASE true
+#define CLIENT_VERSION_IS_RELEASE false
 
 /* Major version */
-#define CLIENT_VERSION_MAJOR 1
+#define CLIENT_VERSION_MAJOR 2
 
 /* Minor version */
 #define CLIENT_VERSION_MINOR 0
@@ -24,10 +24,13 @@
 #define CLIENT_VERSION_REVISION 0
 
 /* Version is release */
-#define COPYRIGHT_YEAR 2020
+#define COPYRIGHT_YEAR 2021
 
 /* Define this symbol to build code that uses AVX2 intrinsics */
 #define ENABLE_AVX2 1
+
+/* Define to 1 to enable mining rpc commands */
+/* #undef ENABLE_MINING_RPC */
 
 /* Define this symbol to build code that uses SHA-NI intrinsics */
 #define ENABLE_SHANI 1
@@ -40,9 +43,6 @@
 
 /* Define to 1 to enable ZMQ functions */
 #define ENABLE_ZMQ 0
-
-/* parameter and return value type for __fdelt_chk */
-/* #undef FDELT_TYPE */
 
 /* define if the Boost library is available */
 #define HAVE_BOOST /**/
@@ -225,9 +225,6 @@
 /* Define to 1 if you have the `rpcrt4' library (-lrpcrt4). */
 /* #undef HAVE_LIBRPCRT4 */
 
-/* Define to 1 if you have the `rt' library (-lrt). */
-/* #undef HAVE_LIBRT */
-
 /* Define to 1 if you have the `shell32' library (-lshell32). */
 /* #undef HAVE_LIBSHELL32 */
 
@@ -336,12 +333,6 @@
 /* Define if the visibility attribute is supported. */
 #define HAVE_VISIBILITY_ATTRIBUTE 1
 
-/* Define this symbol if boost sleep works */
-/* #undef HAVE_WORKING_BOOST_SLEEP */
-
-/* Define this symbol if boost sleep_for works */
-#define HAVE_WORKING_BOOST_SLEEP_FOR 1
-
 /* Define to the sub-directory where libtool stores uninstalled libraries. */
 #define LT_OBJDIR ".libs/"
 
@@ -352,7 +343,7 @@
 #define PACKAGE_NAME "AMBANKCOIN Core"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "AMBANKCOIN Core 1.0.0.3"
+#define PACKAGE_STRING "AMBANKCOIN Core 2.0.0"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "ambankcoin"
@@ -361,25 +352,28 @@
 #define PACKAGE_URL "https://ambankcoin.com/"
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "1.0.0.3"
+#define PACKAGE_VERSION "2.0.0"
+
+/* Path to the zk params dir during unit tests on windows */
+#define PARAMS_DIR ""
 
 /* Define to necessary symbol if this constant uses a non-standard name on
    your system. */
 /* #undef PTHREAD_CREATE_JOINABLE */
 
-/* Define this symbol if the qt platform is cocoa */
+/* Define this symbol if the Qt platform is Cocoa */
 /* #undef QT_QPA_PLATFORM_COCOA */
 
-/* Define this symbol if the minimal qt platform exists */
+/* Define this symbol if the minimal Qt platform exists */
 /* #undef QT_QPA_PLATFORM_MINIMAL */
 
-/* Define this symbol if the qt platform is windows */
+/* Define this symbol if the Qt platform is Windows */
 /* #undef QT_QPA_PLATFORM_WINDOWS */
 
-/* Define this symbol if the qt platform is xcb */
+/* Define this symbol if the Qt platform is XCB */
 /* #undef QT_QPA_PLATFORM_XCB */
 
-/* Define this symbol if qt plugins are static */
+/* Define this symbol if Qt plugins are static */
 /* #undef QT_STATICPLUGIN */
 
 /* Define to 1 if you have the ANSI C header files. */
@@ -393,6 +387,9 @@
 
 /* Define this symbol if coverage is enabled */
 /* #undef USE_COVERAGE */
+
+/* Define if using a custom zk params path */
+/* #undef USE_CUSTOM_PARAMS */
 
 /* Define if dbus support should be compiled in */
 #define USE_DBUS 1

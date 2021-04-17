@@ -1,30 +1,32 @@
 leveldb/util/libleveldb_a-coding.o: leveldb/util/coding.cc \
  /usr/include/stdc-predef.h leveldb/util/coding.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h /usr/include/stdint.h \
- /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+ /usr/include/c++/9/cstdint \
+ /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/bits/long-double.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/c++/9/bits/cpu_defines.h \
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/x86_64-linux-gnu/bits/types.h \
  /usr/include/x86_64-linux-gnu/bits/timesize.h \
  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
  /usr/include/x86_64-linux-gnu/bits/time64.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h /usr/include/string.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+ /usr/include/c++/9/cstring /usr/include/string.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/strings.h \
  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
- /usr/include/c++/9/string \
- /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
- /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
- /usr/include/x86_64-linux-gnu/c++/9/bits/cpu_defines.h \
- /usr/include/c++/9/bits/stringfwd.h /usr/include/c++/9/bits/memoryfwd.h \
+ /usr/include/c++/9/string /usr/include/c++/9/bits/stringfwd.h \
+ /usr/include/c++/9/bits/memoryfwd.h \
  /usr/include/c++/9/bits/char_traits.h \
  /usr/include/c++/9/bits/stl_algobase.h \
  /usr/include/c++/9/bits/functexcept.h \
@@ -49,7 +51,7 @@ leveldb/util/libleveldb_a-coding.o: leveldb/util/coding.cc \
  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
- /usr/include/x86_64-linux-gnu/bits/wchar2.h /usr/include/c++/9/cstdint \
+ /usr/include/x86_64-linux-gnu/bits/wchar2.h \
  /usr/include/c++/9/bits/allocator.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++allocator.h \
  /usr/include/c++/9/ext/new_allocator.h /usr/include/c++/9/new \
@@ -127,20 +129,36 @@ leveldb/util/libleveldb_a-coding.o: leveldb/util/coding.cc \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/9/bits/functional_hash.h \
  /usr/include/c++/9/bits/basic_string.tcc leveldb/include/leveldb/slice.h \
- /usr/include/assert.h leveldb/port/port.h leveldb/port/port_posix.h \
- leveldb/port/atomic_pointer.h /usr/include/c++/9/atomic \
- /usr/include/c++/9/bits/atomic_base.h \
- /usr/include/c++/9/bits/atomic_lockfree_defines.h
+ /usr/include/assert.h leveldb/include/leveldb/export.h \
+ leveldb/port/port.h leveldb/port/port_stdcxx.h \
+ crc32c/include/crc32c/crc32c.h /usr/include/c++/9/cstddef \
+ /usr/include/c++/9/cassert /usr/include/c++/9/condition_variable \
+ /usr/include/c++/9/chrono /usr/include/c++/9/ratio \
+ /usr/include/c++/9/limits /usr/include/c++/9/ctime \
+ /usr/include/c++/9/bits/parse_numbers.h \
+ /usr/include/c++/9/bits/std_mutex.h /usr/include/c++/9/system_error \
+ /usr/include/x86_64-linux-gnu/c++/9/bits/error_constants.h \
+ /usr/include/c++/9/stdexcept /usr/include/c++/9/bits/unique_lock.h \
+ /usr/include/c++/9/ext/concurrence.h \
+ /usr/include/c++/9/bits/unique_ptr.h /usr/include/c++/9/utility \
+ /usr/include/c++/9/bits/stl_relops.h /usr/include/c++/9/tuple \
+ /usr/include/c++/9/array /usr/include/c++/9/bits/uses_allocator.h \
+ /usr/include/c++/9/bits/invoke.h /usr/include/c++/9/bits/shared_ptr.h \
+ /usr/include/c++/9/bits/shared_ptr_base.h \
+ /usr/include/c++/9/bits/allocated_ptr.h \
+ /usr/include/c++/9/bits/refwrap.h \
+ /usr/include/c++/9/ext/aligned_buffer.h /usr/include/c++/9/mutex \
+ leveldb/port/thread_annotations.h
 
 /usr/include/stdc-predef.h:
 
 leveldb/util/coding.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h:
+/usr/include/c++/9/cstdint:
 
-/usr/include/stdint.h:
+/usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h:
 
-/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+/usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h:
 
 /usr/include/features.h:
 
@@ -153,6 +171,14 @@ leveldb/util/coding.h:
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/include/x86_64-linux-gnu/c++/9/bits/cpu_defines.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
@@ -167,6 +193,8 @@ leveldb/util/coding.h:
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+
+/usr/include/c++/9/cstring:
 
 /usr/include/string.h:
 
@@ -183,12 +211,6 @@ leveldb/util/coding.h:
 /usr/include/x86_64-linux-gnu/bits/string_fortified.h:
 
 /usr/include/c++/9/string:
-
-/usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h:
-
-/usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h:
-
-/usr/include/x86_64-linux-gnu/c++/9/bits/cpu_defines.h:
 
 /usr/include/c++/9/bits/stringfwd.h:
 
@@ -253,8 +275,6 @@ leveldb/util/coding.h:
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
 /usr/include/x86_64-linux-gnu/bits/wchar2.h:
-
-/usr/include/c++/9/cstdint:
 
 /usr/include/c++/9/bits/allocator.h:
 
@@ -450,14 +470,66 @@ leveldb/include/leveldb/slice.h:
 
 /usr/include/assert.h:
 
+leveldb/include/leveldb/export.h:
+
 leveldb/port/port.h:
 
-leveldb/port/port_posix.h:
+leveldb/port/port_stdcxx.h:
 
-leveldb/port/atomic_pointer.h:
+crc32c/include/crc32c/crc32c.h:
 
-/usr/include/c++/9/atomic:
+/usr/include/c++/9/cstddef:
 
-/usr/include/c++/9/bits/atomic_base.h:
+/usr/include/c++/9/cassert:
 
-/usr/include/c++/9/bits/atomic_lockfree_defines.h:
+/usr/include/c++/9/condition_variable:
+
+/usr/include/c++/9/chrono:
+
+/usr/include/c++/9/ratio:
+
+/usr/include/c++/9/limits:
+
+/usr/include/c++/9/ctime:
+
+/usr/include/c++/9/bits/parse_numbers.h:
+
+/usr/include/c++/9/bits/std_mutex.h:
+
+/usr/include/c++/9/system_error:
+
+/usr/include/x86_64-linux-gnu/c++/9/bits/error_constants.h:
+
+/usr/include/c++/9/stdexcept:
+
+/usr/include/c++/9/bits/unique_lock.h:
+
+/usr/include/c++/9/ext/concurrence.h:
+
+/usr/include/c++/9/bits/unique_ptr.h:
+
+/usr/include/c++/9/utility:
+
+/usr/include/c++/9/bits/stl_relops.h:
+
+/usr/include/c++/9/tuple:
+
+/usr/include/c++/9/array:
+
+/usr/include/c++/9/bits/uses_allocator.h:
+
+/usr/include/c++/9/bits/invoke.h:
+
+/usr/include/c++/9/bits/shared_ptr.h:
+
+/usr/include/c++/9/bits/shared_ptr_base.h:
+
+/usr/include/c++/9/bits/allocated_ptr.h:
+
+/usr/include/c++/9/bits/refwrap.h:
+
+/usr/include/c++/9/ext/aligned_buffer.h:
+
+/usr/include/c++/9/mutex:
+
+leveldb/port/thread_annotations.h:

@@ -1,11 +1,12 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2019 The AMBANKCOIN developers
+// Copyright (c) 2015-2020 The AMBANKCOIN developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "bitcoinunits.h"
 #include "chainparams.h"
+#include "policy/feerate.h"
 #include "primitives/transaction.h"
 
 #include <QSettings>
@@ -55,27 +56,28 @@ QString BitcoinUnits::id(int unit)
 
 QString BitcoinUnits::name(int unit, bool isZambk)
 {
+    const QString CURR_UNIT = QString(CURRENCY_UNIT.c_str());
     QString z = "";
     if(isZambk) z = "z";
-    if (Params().NetworkID() == CBaseChainParams::MAIN) {
+    if (Params().NetworkIDString() == CBaseChainParams::MAIN) {
         switch (unit) {
         case AMBK:
-            return z + QString("AMBK");
+            return z + CURR_UNIT;
         case mAMBK:
-            return z + QString("mAMBK");
+            return z + QString("m") + CURR_UNIT;
         case uAMBK:
-            return z + QString::fromUtf8("μAMBK");
+            return z + QString::fromUtf8("μ") + CURR_UNIT;
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
         case AMBK:
-            return z + QString("tAMBK");
+            return z + QString("t") + CURR_UNIT;
         case mAMBK:
-            return z + QString("mtAMBK");
+            return z + QString("mt") + CURR_UNIT;
         case uAMBK:
-            return z + QString::fromUtf8("μtAMBK");
+            return z + QString::fromUtf8("μt") + CURR_UNIT;
         default:
             return QString("???");
         }
@@ -84,25 +86,26 @@ QString BitcoinUnits::name(int unit, bool isZambk)
 
 QString BitcoinUnits::description(int unit)
 {
-    if (Params().NetworkID() == CBaseChainParams::MAIN) {
+    const QString CURR_UNIT = QString(CURRENCY_UNIT.c_str());
+    if (Params().NetworkIDString() == CBaseChainParams::MAIN) {
         switch (unit) {
         case AMBK:
-            return QString("AMBK");
+            return CURR_UNIT;
         case mAMBK:
-            return QString("Milli-AMBK (1 / 1" THIN_SP_UTF8 "000)");
+            return QString("Milli-") + CURR_UNIT + QString(" (1 / 1" THIN_SP_UTF8 "000)");
         case uAMBK:
-            return QString("Micro-AMBK (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            return QString("Micro-") + CURR_UNIT + QString(" (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
         case AMBK:
-            return QString("TestAMBKs");
+            return QString("Test") + CURR_UNIT;
         case mAMBK:
-            return QString("Milli-TestAMBK (1 / 1" THIN_SP_UTF8 "000)");
+            return QString("Milli-Test") + CURR_UNIT + QString(" (1 / 1" THIN_SP_UTF8 "000)");
         case uAMBK:
-            return QString("Micro-TestAMBK (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            return QString("Micro-Test") + CURR_UNIT + QString(" (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
@@ -308,5 +311,5 @@ QVariant BitcoinUnits::data(const QModelIndex& index, int role) const
 
 CAmount BitcoinUnits::maxMoney()
 {
-    return Params().MaxMoneyOut();
+    return Params().GetConsensus().nMaxMoneyOut;
 }

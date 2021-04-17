@@ -220,7 +220,7 @@ am__define_uniq_tagged_files = \
 ETAGS = etags
 CTAGS = ctags
 CSCOPE = cscope
-DIST_SUBDIRS = src doc/man
+DIST_SUBDIRS = src doc/man params
 am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(srcdir)/libbitcoinconsensus.pc.in \
 	$(top_srcdir)/build-aux/compile \
@@ -240,7 +240,8 @@ am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/test/util/bitcoin-util-test.py \
 	$(top_srcdir)/test/util/rpcauth-test.py COPYING INSTALL \
 	build-aux/compile build-aux/config.guess build-aux/config.sub \
-	build-aux/install-sh build-aux/ltmain.sh build-aux/missing
+	build-aux/depcomp build-aux/install-sh build-aux/ltmain.sh \
+	build-aux/missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -288,6 +289,7 @@ AMTAR = @AMTAR@
 AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@
 AR = @AR@
 ARFLAGS = @ARFLAGS@
+ARM_CRC_CXXFLAGS = @ARM_CRC_CXXFLAGS@
 AUTOCONF = @AUTOCONF@
 AUTOHEADER = @AUTOHEADER@
 AUTOMAKE = @AUTOMAKE@
@@ -310,6 +312,7 @@ BOOST_SYSTEM_LIB = @BOOST_SYSTEM_LIB@
 BOOST_THREAD_LIB = @BOOST_THREAD_LIB@
 BOOST_UNIT_TEST_FRAMEWORK_LIB = @BOOST_UNIT_TEST_FRAMEWORK_LIB@
 BREW = @BREW@
+CARGO = @CARGO@
 CC = @CC@
 CCACHE = @CCACHE@
 CCDEPMODE = @CCDEPMODE@
@@ -363,7 +366,14 @@ GREP = @GREP@
 HARDENED_CPPFLAGS = @HARDENED_CPPFLAGS@
 HARDENED_CXXFLAGS = @HARDENED_CXXFLAGS@
 HARDENED_LDFLAGS = @HARDENED_LDFLAGS@
+HAVE_BUILTIN_PREFETCH = @HAVE_BUILTIN_PREFETCH@
 HAVE_CXX11 = @HAVE_CXX11@
+HAVE_FDATASYNC = @HAVE_FDATASYNC@
+HAVE_FULLFSYNC = @HAVE_FULLFSYNC@
+HAVE_MM_PREFETCH = @HAVE_MM_PREFETCH@
+HAVE_O_CLOEXEC = @HAVE_O_CLOEXEC@
+HAVE_STRONG_GETAUXVAL = @HAVE_STRONG_GETAUXVAL@
+HAVE_WEAK_GETAUXVAL = @HAVE_WEAK_GETAUXVAL@
 HEXDUMP = @HEXDUMP@
 IMAGEMAGICK_CONVERT = @IMAGEMAGICK_CONVERT@
 INSTALL = @INSTALL@
@@ -377,13 +387,14 @@ LCOV_OPTS = @LCOV_OPTS@
 LD = @LD@
 LDFLAGS = @LDFLAGS@
 LEVELDB_CPPFLAGS = @LEVELDB_CPPFLAGS@
-LEVELDB_TARGET_FLAGS = @LEVELDB_TARGET_FLAGS@
 LIBLEVELDB = @LIBLEVELDB@
 LIBMEMENV = @LIBMEMENV@
 LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
+LIBSAPLING_LIBS = @LIBSAPLING_LIBS@
 LIBTOOL = @LIBTOOL@
 LIBTOOL_APP_LDFLAGS = @LIBTOOL_APP_LDFLAGS@
+LIBZCASH_LIBS = @LIBZCASH_LIBS@
 LIPO = @LIPO@
 LN_S = @LN_S@
 LRELEASE = @LRELEASE@
@@ -480,12 +491,17 @@ RCC = @RCC@
 READELF = @READELF@
 RELDFLAGS = @RELDFLAGS@
 RSVG_CONVERT = @RSVG_CONVERT@
+RUSTC = @RUSTC@
+RUST_TARGET = @RUST_TARGET@
+RUST_VENDORED_SOURCES = @RUST_VENDORED_SOURCES@
 SANITIZER_CXXFLAGS = @SANITIZER_CXXFLAGS@
 SANITIZER_LDFLAGS = @SANITIZER_LDFLAGS@
 SED = @SED@
 SET_MAKE = @SET_MAKE@
 SHANI_CXXFLAGS = @SHANI_CXXFLAGS@
 SHELL = @SHELL@
+SODIUM_CFLAGS = @SODIUM_CFLAGS@
+SODIUM_LIBS = @SODIUM_LIBS@
 SSE41_CXXFLAGS = @SSE41_CXXFLAGS@
 SSE42_CXXFLAGS = @SSE42_CXXFLAGS@
 SSL_CFLAGS = @SSL_CFLAGS@
@@ -567,7 +583,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 ACLOCAL_AMFLAGS = -I build-aux/m4
-SUBDIRS = src $(am__append_1)
+SUBDIRS = src $(am__append_1) params
 @BUILD_BITCOIN_LIBS_TRUE@pkgconfigdir = $(libdir)/pkgconfig
 @BUILD_BITCOIN_LIBS_TRUE@pkgconfig_DATA = libbitcoinconsensus.pc
 BITCOIND_BIN = $(top_builddir)/src/$(BITCOIN_DAEMON_NAME)$(EXEEXT)
@@ -599,6 +615,13 @@ DIST_SHARE = \
            $(top_srcdir)/share/genbuild.sh \
            $(top_srcdir)/share/rpcauth
 
+DIST_CARGO = \
+           $(top_srcdir)/.cargo/config.offline \
+           $(top_srcdir)/Cargo.lock \
+           $(top_srcdir)/Cargo.toml \
+           $(top_srcdir)/rust-toolchain \
+           $(top_srcdir)/params/install-params.sh
+
 BIN_CHECKS = $(top_srcdir)/contrib/devtools/symbol-check.py \
            $(top_srcdir)/contrib/devtools/security-check.py
 
@@ -617,6 +640,8 @@ OSX_PACKAGING = $(OSX_DEPLOY_SCRIPT) $(OSX_FANCY_PLIST) $(OSX_INSTALLER_ICONS) \
   $(top_srcdir)/contrib/macdeploy/detached-sig-apply.sh \
   $(top_srcdir)/contrib/macdeploy/detached-sig-create.sh
 
+SPEND_PARAMS = $(top_srcdir)/params/sapling-spend.params
+OUTPUT_PARAMS = $(top_srcdir)/params/sapling-output.params
 COVERAGE_INFO = baseline.info \
   test_ambankcoin_filtered.info total_coverage.info \
   baseline_filtered.info functional_test.info functional_test_filtered.info \
@@ -624,14 +649,15 @@ COVERAGE_INFO = baseline.info \
 
 OSX_APP_BUILT = $(OSX_APP)/Contents/PkgInfo $(OSX_APP)/Contents/Resources/empty.lproj \
   $(OSX_APP)/Contents/Resources/bitcoin.icns $(OSX_APP)/Contents/Info.plist \
-  $(OSX_APP)/Contents/MacOS/AMBANKCOIN-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings
+  $(OSX_APP)/Contents/MacOS/AMBANKCOIN-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings \
+  $(OSX_APP)/Contents/Resources/sapling-spend.params $(OSX_APP)/Contents/Resources/sapling-output.params
 
 @BUILD_DARWIN_FALSE@APP_DIST_DIR = $(top_builddir)/dist
 @BUILD_DARWIN_FALSE@APP_DIST_EXTRAS = $(APP_DIST_DIR)/.background/$(OSX_BACKGROUND_IMAGE) $(APP_DIST_DIR)/.DS_Store $(APP_DIST_DIR)/Applications
 @BUILD_DARWIN_FALSE@OSX_BACKGROUND_IMAGE_DPIFILES := $(foreach dpi,$(OSX_BACKGROUND_IMAGE_DPIS),dpi$(dpi).$(OSX_BACKGROUND_IMAGE))
-@USE_LCOV_TRUE@LCOV_FILTER_PATTERN = -p "/usr/include/" -p "/usr/lib/" -p "src/leveldb/" -p "src/univalue" -p "src/secp256k1"
+@USE_LCOV_TRUE@LCOV_FILTER_PATTERN = -p "/usr/include/" -p "/usr/lib/" -p "src/leveldb/" -p "src/crc32c/" -p "src/univalue" -p "src/secp256k1"
 dist_noinst_SCRIPTS = autogen.sh
-EXTRA_DIST = $(DIST_SHARE) $(DIST_CONTRIB) $(DIST_DOCS) \
+EXTRA_DIST = $(DIST_SHARE) $(DIST_CONTRIB) $(DIST_DOCS) $(DIST_CARGO) \
 	$(WINDOWS_PACKAGING) $(LINUX_PACKAGING) $(OSX_PACKAGING) \
 	$(BIN_CHECKS) test/functional test/util/bitcoin-util-test.py \
 	test/util/data/bitcoin-util-test.json \
@@ -648,7 +674,8 @@ EXTRA_DIST = $(DIST_SHARE) $(DIST_CONTRIB) $(DIST_DOCS) \
 	test/util/data/txcreatescript1.hex \
 	test/util/data/txcreatescript1.json \
 	test/util/data/txcreatesign.hex \
-	test/util/data/txcreatesign.json test/util/rpcauth-test.py
+	test/util/data/txcreatesign.json \
+	test/util/data/pre_hd_wallet.dat test/util/rpcauth-test.py
 CLEANFILES = $(OSX_DMG) $(BITCOIN_WIN_INSTALLER)
 DISTCHECK_CONFIGURE_FLAGS = --enable-man
 all: all-recursive
@@ -1215,6 +1242,14 @@ $(OSX_APP)/Contents/MacOS/AMBANKCOIN-Qt: all-recursive
 $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings:
 	$(MKDIR_P) $(@D)
 	echo '{	CFBundleDisplayName = "$(PACKAGE_NAME)"; CFBundleName = "$(PACKAGE_NAME)"; }' > $@
+
+$(OSX_APP)/Contents/Resources/sapling-spend.params: $(SPEND_PARAMS)
+	$(MKDIR_P) $(@D)
+	$(INSTALL_DATA) $< $@
+
+$(OSX_APP)/Contents/Resources/sapling-output.params: $(OUTPUT_PARAMS)
+	$(MKDIR_P) $(@D)
+	$(INSTALL_DATA) $< $@
 
 osx_volname:
 	echo $(OSX_VOLNAME) >$@
