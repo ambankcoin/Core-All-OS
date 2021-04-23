@@ -574,7 +574,7 @@
             </property>
            </widget>
           </item>
-          <item>
+          <!-- <item>
            <widget class="QLabel" name="labelAmountZambk">
             <property name="text">
              <string notr="true">0 zAMBK</string>
@@ -583,7 +583,7 @@
              <set>Qt::AlignCenter</set>
             </property>
            </widget>
-          </item>
+          </item> -->
          </layout>
         </item>
         <item>
@@ -714,7 +714,7 @@
                   </property>
                  </spacer>
                 </item>
-                <item>
+                <!-- <item>
                  <widget class="QLabel" name="labelSquarezAmbk">
                   <property name="minimumSize">
                    <size>
@@ -732,14 +732,14 @@
                    <string/>
                   </property>
                  </widget>
-                </item>
-                <item>
+                </item> -->
+                <!-- <item>
                  <widget class="QLabel" name="labelZambk">
                   <property name="text">
                    <string notr="true">zAMBK</string>
                   </property>
                  </widget>
-                </item>
+                </item> -->
                </layout>
               </item>
               <item>

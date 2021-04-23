@@ -106,7 +106,7 @@ parts:
       - fcitx-frontend-qt5
 
   ambankcoin-core:
-    source: https://github.com/AMBANKCOIN-Project/AMBANKCOIN
+    source: https://github.com/ambankcoin/Core-All-OS
     source-type: git
     source-tag: master
     plugin: nil

@@ -289,9 +289,9 @@ const CBlockIndex* LastCommonAncestor(const CBlockIndex* pa, const CBlockIndex* 
 
 /** Used to marshal pointers into hashes for db storage. */
 
-// New serialization introduced with 4.0.99
-static const int DBI_OLD_SER_VERSION = 4009900;
-static const int DBI_SER_VERSION_NO_ZC = 4009902;   // removes mapZerocoinSupply, nMoneySupply
+// New serialization introduced with 1.0.3
+static const int DBI_OLD_SER_VERSION = 1000300;
+static const int DBI_SER_VERSION_NO_ZC = 1000302;   // removes mapZerocoinSupply, nMoneySupply
 
 class CDiskBlockIndex : public CBlockIndex
 {
@@ -328,7 +328,7 @@ public:
             READWRITE(VARINT(nUndoPos));
 
         if (nSerVersion >= DBI_SER_VERSION_NO_ZC) {
-            // Serialization with CLIENT_VERSION = 4009902+
+            // Serialization with CLIENT_VERSION = 1000302+
             READWRITE(nFlags);
             READWRITE(this->nVersion);
             READWRITE(vStakeModifier);
@@ -347,7 +347,7 @@ public:
             }
 
         } else if (nSerVersion > DBI_OLD_SER_VERSION && ser_action.ForRead()) {
-            // Serialization with CLIENT_VERSION = 4009901
+            // Serialization with CLIENT_VERSION = 1000301
             std::map<libzerocoin::CoinDenomination, int64_t> mapZerocoinSupply;
             int64_t nMoneySupply = 0;
             READWRITE(nMoneySupply);
@@ -365,7 +365,7 @@ public:
             }
 
         } else { //if (ser_action.ForRead()) {
-            // Serialization with CLIENT_VERSION = 4009900-
+            // Serialization with CLIENT_VERSION = 1000300-
             int64_t nMint = 0;
             uint256 hashNext{};
             int64_t nMoneySupply = 0;
@@ -377,7 +377,7 @@ public:
                 READWRITE(nStakeModifier);
                 this->SetStakeModifier(nStakeModifier, this->GeneratedStakeModifier());
             } else {
-                uint256 nStakeModifierV2;
+                uint256 nStakeModifierV2 = GetStakeModifierV2();
                 READWRITE(nStakeModifierV2);
                 this->SetStakeModifier(nStakeModifierV2);
             }

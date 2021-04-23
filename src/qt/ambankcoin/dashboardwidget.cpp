@@ -53,9 +53,9 @@ DashboardWidget::DashboardWidget(AMBANKCOINGUI* parent) :
     // Staking Information
     setCssSubtitleScreen(ui->labelMessage);
     setCssProperty(ui->labelSquareAmbk, "square-chart-ambk");
-    setCssProperty(ui->labelSquarezAmbk, "square-chart-zambk");
+    // setCssProperty(ui->labelSquarezAmbk, "square-chart-zambk");
     setCssProperty(ui->labelAmbk, "text-chart-ambk");
-    setCssProperty(ui->labelZambk, "text-chart-zambk");
+    // setCssProperty(ui->labelZambk, "text-chart-zambk");
 
     // Staking Amount
     QFont fontBold;
@@ -63,7 +63,7 @@ DashboardWidget::DashboardWidget(AMBANKCOINGUI* parent) :
 
     setCssProperty(ui->labelChart, "legend-chart");
     setCssProperty(ui->labelAmountAmbk, "text-stake-ambk-disable");
-    setCssProperty(ui->labelAmountZambk, "text-stake-zambk-disable");
+    // setCssProperty(ui->labelAmountZambk, "text-stake-zambk-disable");
 
     setCssProperty({ui->pushButtonAll,  ui->pushButtonMonth, ui->pushButtonYear}, "btn-check-time");
     setCssProperty({ui->comboBoxMonths,  ui->comboBoxYears}, "btn-combo-chart-selected");
@@ -683,14 +683,14 @@ void DashboardWidget::onChartRefreshed()
     nDisplayUnit = walletModel->getOptionsModel()->getDisplayUnit();
     if (chartData->totalAmbk > 0 || chartData->totalZambk > 0) {
         setCssProperty(ui->labelAmountAmbk, "text-stake-ambk");
-        setCssProperty(ui->labelAmountZambk, "text-stake-zambk");
+        // setCssProperty(ui->labelAmountZambk, "text-stake-zambk");
     } else {
         setCssProperty(ui->labelAmountAmbk, "text-stake-ambk-disable");
-        setCssProperty(ui->labelAmountZambk, "text-stake-zambk-disable");
+        // setCssProperty(ui->labelAmountZambk, "text-stake-zambk-disable");
     }
-    forceUpdateStyle({ui->labelAmountAmbk, ui->labelAmountZambk});
+    // forceUpdateStyle({ui->labelAmountAmbk, ui->labelAmountZambk});
     ui->labelAmountAmbk->setText(GUIUtil::formatBalance(chartData->totalAmbk, nDisplayUnit));
-    ui->labelAmountZambk->setText(GUIUtil::formatBalance(chartData->totalZambk, nDisplayUnit, true));
+    // ui->labelAmountZambk->setText(GUIUtil::formatBalance(chartData->totalZambk, nDisplayUnit, true));
 
     series->append(set0);
     if (hasZambkStakes)

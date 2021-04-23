@@ -1219,7 +1219,7 @@ BOOST_AUTO_TEST_CASE(ccoins_add)
      * entry in the cache after the modification. Verify behavior with the
      * with the ModifyNewCoin coinbase argument set to false, and to true.
      *
-     * AMBANKCOIN: Remove Coinbase argument (ref: https://github.com/AMBANKCOIN-Project/AMBANKCOIN/pull/1775)
+     * AMBANKCOIN: Remove Coinbase argument (ref: https://github.com/ambankcoin/Core-All-OS/pull/1775)
      *
      *           Cache   Write   Result  Cache        Result
      *           Value   Value   Value   Flags        Flags

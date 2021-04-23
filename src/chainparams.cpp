@@ -330,14 +330,14 @@ public:
         consensus.vUpgrades[Consensus::UPGRADE_TESTDUMMY].nActivationHeight =
                 Consensus::NetworkUpgrade::NO_ACTIVATION_HEIGHT;
         consensus.vUpgrades[Consensus::UPGRADE_POS].nActivationHeight           = 1001;
-        consensus.vUpgrades[Consensus::UPGRADE_POS_V2].nActivationHeight        = 615800;
-        consensus.vUpgrades[Consensus::UPGRADE_ZC].nActivationHeight            = 615800;
-        consensus.vUpgrades[Consensus::UPGRADE_ZC_V2].nActivationHeight         = 615800;
-        consensus.vUpgrades[Consensus::UPGRADE_BIP65].nActivationHeight         = 615800;
-        consensus.vUpgrades[Consensus::UPGRADE_ZC_PUBLIC].nActivationHeight     = 615800;
-        consensus.vUpgrades[Consensus::UPGRADE_V3_4].nActivationHeight          = 615800;
-        consensus.vUpgrades[Consensus::UPGRADE_V4_0].nActivationHeight          = 615800;
-        consensus.vUpgrades[Consensus::UPGRADE_V5_0].nActivationHeight          = 615800;
+        consensus.vUpgrades[Consensus::UPGRADE_POS_V2].nActivationHeight        = 8900;
+        consensus.vUpgrades[Consensus::UPGRADE_ZC].nActivationHeight            = 8900;
+        consensus.vUpgrades[Consensus::UPGRADE_ZC_V2].nActivationHeight         = 8900;
+        consensus.vUpgrades[Consensus::UPGRADE_BIP65].nActivationHeight         = 8900;
+        consensus.vUpgrades[Consensus::UPGRADE_ZC_PUBLIC].nActivationHeight     = 8900;
+        consensus.vUpgrades[Consensus::UPGRADE_V3_4].nActivationHeight          = 8900;
+        consensus.vUpgrades[Consensus::UPGRADE_V4_0].nActivationHeight          = 8900;
+        consensus.vUpgrades[Consensus::UPGRADE_V5_0].nActivationHeight          = 8900;
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -420,6 +420,7 @@ public:
         consensus.nTargetSpacing = 1 * 60;
         consensus.nTimeSlotLength = 15;
         consensus.nMaxProposalPayments = 20;
+        consensus.strDevpubkey = "03efca8cbf62f34ee8e63f88f63d27ae65cdc36d61674af4fe71b269b48ba14e6b";
 
         /* Spork Key for RegTest:
         WIF private key: 932HEevBSujW2ud7RfB1YF91AFygbBRQj3de3LyaCRqNzKKgWXi

@@ -49,7 +49,7 @@ git config --global user.email "MY_NAME@example.com"
 Fetching the Build Script
 --------------------------
 
-The build script we'll be using is contained in the AMBANKCOIN github repository ([contrib/gitian-build.py](https://github.com/ambankcoin-project/ambankcoin/blob/master/contrib/gitian-build.py)). Since this is a completely fresh environment, we haven't yet cloned the AMBANKCOIN repository and will need to fetch this script with the following commands:
+The build script we'll be using is contained in the AMBANKCOIN github repository ([contrib/gitian-build.py](https://github.com/ambankcoin/Core-All-OS/blob/master/contrib/gitian-build.py)). Since this is a completely fresh environment, we haven't yet cloned the AMBANKCOIN repository and will need to fetch this script with the following commands:
 
 ```bash
 curl -L -O https://raw.githubusercontent.com/AMBANKCOIN-Project/AMBANKCOIN/master/contrib/gitian-build.py

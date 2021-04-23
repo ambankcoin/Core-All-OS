@@ -107,7 +107,7 @@ int64_t nMaxTipAge = DEFAULT_MAX_TIP_AGE;
  * We are ~100 times smaller then bitcoin now (2015-06-23), set minRelayTxFee only 10 times higher
  * so it's still 10 times lower comparing to bitcoin.
  */
-CFeeRate minRelayTxFee = CFeeRate(10000);
+CFeeRate minRelayTxFee = CFeeRate(10);
 
 CTxMemPool mempool(::minRelayTxFee);
 
@@ -2731,7 +2731,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
     }
 
     //check dev fund transaction
-    if (nHeight > 1000) {
+    if (Params().GetConsensus().NetworkUpgradeActive(nHeight, Consensus::UPGRADE_POS)) {
         CTransactionRef tx = block.vtx[1];
         if (!tx->vout[1].IsZerocoinMint()) {
             int nIndex = tx->vout.size() - 2;
@@ -2741,12 +2741,12 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
 
             if (tx->vout[nIndex].nValue != nMasternodeValue) {
                 return state.DoS(100, error("%s : rejected by check masternode lock-in at %d", __func__, nHeight),
-                    REJECT_INVALID, "check devfund mismatch");
+                    REJECT_INVALID, "check masternode value mismatch");
             }
 
             if (tx->vout[nIndex + 1].nValue != nDevFundValue) {
                 return state.DoS(100, error("%s : rejected by check devfund value lock-in at %d", __func__, nHeight),
-                    REJECT_INVALID, "check devfund mismatch");
+                    REJECT_INVALID, "check devfund value mismatch");
             }
 
             if (nHeight != 0 && !IsInitialBlockDownload()) {
@@ -2754,7 +2754,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
 
                 if (tx->vout[nIndex + 1].scriptPubKey != devScriptPubKey) {
                     return state.DoS(100, error("%s : rejected by check devfund address lock-in at %d", __func__, nHeight),
-                        REJECT_INVALID, "check devfund mismatch");
+                        REJECT_INVALID, "check devfund address mismatch");
                 }
             } else {
                 LogPrintf("CheckBlock(): Devfund destination check skipped on sync\n");
@@ -2808,9 +2808,12 @@ bool CheckWork(const CBlock& block, const CBlockIndex* const pindexPrev)
     if (pindexPrev == NULL)
         return error("%s : null pindexPrev for block %s", __func__, block.GetHash().GetHex());
 
+    if (!block.IsProofOfWork()) {
+        return true;
+    }
     unsigned int nBitsRequired = GetNextWorkRequired(pindexPrev, &block);
 
-    if (!Params().IsRegTestNet() && block.IsProofOfWork() && (pindexPrev->nHeight + 1 <= 1001)) {
+    if (!Params().IsRegTestNet() && block.IsProofOfWork() && !Params().GetConsensus().NetworkUpgradeActive(pindexPrev->nHeight, Consensus::UPGRADE_POS)) {
         double n1 = ConvertBitsToDouble(block.nBits);
         double n2 = ConvertBitsToDouble(nBitsRequired);
 

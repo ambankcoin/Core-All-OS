@@ -57,6 +57,7 @@ std::unique_ptr<CBlockTemplate> CreateNewBlockWithKey(CReserveKey* reservekey, C
     }
 
     CScript scriptPubKey = GetScriptForDestination(pubkey.GetID());
+
     return BlockAssembler(Params(), DEFAULT_PRINTPRIORITY).CreateNewBlock(scriptPubKey, pwallet, false);
 }
 

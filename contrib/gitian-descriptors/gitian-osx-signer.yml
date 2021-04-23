@@ -8,7 +8,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/ambankcoin-project/ambankcoin-detached-sigs.git"
+- "url": "https://github.com/ambankcoin/Core-All-OS-detached-sigs.git"
   "dir": "signature"
 files:
 - "ambankcoin-osx-unsigned.tar.gz"

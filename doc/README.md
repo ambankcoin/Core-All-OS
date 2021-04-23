@@ -28,7 +28,7 @@ Drag AMBANKCOIN-Qt to your applications folder, and then run AMBANKCOIN-Qt.
 
 ### Need Help?
 
-* See the documentation at the [AMBANKCOIN Wiki](https://github.com/AMBANKCOIN-Project/AMBANKCOIN/wiki)
+* See the documentation at the [AMBANKCOIN Wiki](https://github.com/ambankcoin/Core-All-OS/wiki)
 for help and more information.
 * Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [AMBANKCOIN Forum](http://forum.ambankcoin.com/).
 * Join our Discord server [Discord Server](https://discord.ambankcoin.com)
